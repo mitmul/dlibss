@@ -1,7 +1,9 @@
 .DS_Store
 tmp
 build
+sftp-config.json
 *.jpg
+!000015.jpg
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
-sys.path.append('build')
+sys.path.append('lib/build')
 import os
 import dlibss
 import numpy as np
@@ -19,9 +19,10 @@ if __name__ == '__main__':
         os.mkdir('tmp')
 
     for i, rect in enumerate(rects):
-        l, t, r, b = rect
-        canvas[t:b, l:r] += 1
+        x, y, w, h = rect
+        print rect
+        canvas[y:y + h, x:x + w] += 1
         cv.imwrite('tmp/%d.jpg' % i,
                    img[rect[1]:rect[3], rect[0]:rect[2]])
     canvas = canvas / np.max(canvas) * 255
-    cv.imwrite('%s_ss.jpg' % argv[1], canvas)
+    cv.imwrite('%s_ss.jpg' % sys.argv[1], canvas)

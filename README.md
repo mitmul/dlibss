@@ -15,6 +15,6 @@ Python wrapper of selective search like algorithm in dlib
 
 ## Test dlibss
 
-    $ python scripts/test_dlibss.py
+    $ python scripts/test_dlibss.py 000015.jpg
 
-will create `tmp` dir and `result.jpg`
+will create `tmp` dir and `000015_ss.jpg`
