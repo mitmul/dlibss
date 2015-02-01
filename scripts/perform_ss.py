@@ -19,10 +19,8 @@ if __name__ == '__main__':
         os.mkdir('tmp')
 
     for i, rect in enumerate(rects):
-        x, y, w, h = rect
-        print rect
-        canvas[y:y + h, x:x + w] += 1
-        cv.imwrite('tmp/%d.jpg' % i,
-                   img[rect[1]:rect[3], rect[0]:rect[2]])
+        l, t, r, b = rect
+        canvas[t:b, l:r] += 1
+        cv.imwrite('tmp/%d.jpg' % i, img[t:b, l:r])
     canvas = canvas / np.max(canvas) * 255
     cv.imwrite('%s_ss.jpg' % sys.argv[1], canvas)
